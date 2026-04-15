@@ -57,6 +57,15 @@ Before merging, ensure the plugin is archived:
 - If issues are found: leave clear, specific feedback with suggestions for fixing
 - Be constructive - help developers improve rather than gatekeep
 
+### Featured Label Policy
+
+Moderators may mark selected plugins as `featured` in registry metadata.
+
+- `featured: true` means the plugin is highlighted as editor-recommended
+- Featured plugins are sorted above non-featured plugins in the public list
+- Featured status does **not** replace security/compliance review requirements
+- Featured can be granted or removed at any time by moderators
+
 ## Updating Approved Releases
 
 When a developer submits a PR to update `approved_release_tag`:

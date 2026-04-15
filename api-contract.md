@@ -20,6 +20,7 @@ Returns an array of plugin summaries for the homepage.
     "author": "NhanAZ",
     "description": "A demo plugin for Pockgin.",
     "icon_url": "happy_ghast.png",
+    "featured": false,
     "verified": false,
     "stable_version": "1.0.0",
     "total_downloads": 165,
@@ -44,6 +45,7 @@ Returns full detail for a single plugin.
   "repo": "https://github.com/pockgin/plugin-template",
   "archive_repo": "https://github.com/pockgin-archive/example",
   "icon_url": "happy_ghast.png",
+  "featured": false,
   "verified": false,
   "approved_release_tag": "v1.0.0",
   "stars": 30,
@@ -110,6 +112,7 @@ This is the source of truth maintained by developers and moderators. It contains
   "name": "Example Plugin",
   "repo": "https://github.com/pockgin/plugin-template",
   "approved_release_tag": "v1.0.0",
+  "featured": false,
   "verified": false,
   "build": {
     "provider": "github-releases",
