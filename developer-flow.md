@@ -82,7 +82,6 @@ pockgin libs vendor .     # Clone and inject libs from lock file
   "name": "My Plugin",
   "repo": "https://github.com/yourname/my-plugin",
   "approved_release_tag": "v1.0.0",
-  "verified": false,
   "build": {
     "provider": "github-releases",
     "include_prerelease": false
