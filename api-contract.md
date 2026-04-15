@@ -24,7 +24,7 @@ Returns an array of plugin summaries for the homepage.
     "stable_version": "1.0.0",
     "total_downloads": 165,
     "stars": 30,
-    "download_url": "https://github.com/example/example-plugin/releases/download/v1.0.0/ExamplePlugin.phar"
+    "download_url": "https://github.com/pockgin/plugin-template/releases/download/v1.0.0/ExamplePlugin.phar"
   }
 ]
 ```
@@ -41,7 +41,7 @@ Returns full detail for a single plugin.
   "name": "Example Plugin",
   "author": "NhanAZ",
   "description": "A demo plugin for Pockgin.",
-  "repo": "https://github.com/example/example-plugin",
+  "repo": "https://github.com/pockgin/plugin-template",
   "archive_repo": "https://github.com/pockgin-archive/example",
   "icon_url": "assets/icons/default.svg",
   "verified": false,
@@ -108,7 +108,7 @@ This is the source of truth maintained by developers and moderators. It contains
 {
   "id": "example",
   "name": "Example Plugin",
-  "repo": "https://github.com/example/example-plugin",
+  "repo": "https://github.com/pockgin/plugin-template",
   "approved_release_tag": "v1.0.0",
   "verified": false,
   "build": {
