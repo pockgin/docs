@@ -18,6 +18,59 @@ Clone the [plugin-template](https://github.com/pockgin/plugin-template) or add t
 
 > **Important:** Auto-release on your repo does NOT mean auto-publish on Pockgin. A moderator must still approve it.
 
+## Step 1b: Declare Library Dependencies (if any)
+
+If your plugin depends on external libraries (virions, shared code), declare them in `pockgin.libs.yml` at the repo root:
+
+```yaml
+libs:
+  - id: simplesql
+    repo: NhanAZ-Libraries/SimpleSQL
+    version: ^1.0.0
+    target: src/NhanAZ/SimpleSQL
+    src_path: src/NhanAZ/SimpleSQL
+
+  - id: libasynql
+    repo: poggit/libasynql
+    version: ^4.0.0
+    target: src/poggit/libasynql
+    src_path: libasynql/src/poggit/libasynql
+```
+
+### Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `id` | Yes | Short identifier for the lib |
+| `repo` | Yes | GitHub `owner/repo` |
+| `version` | No | Semver range (e.g., `^1.0.0`). Resolves to the best matching tag. |
+| `ref` | No | Explicit tag, branch, or commit SHA. Overrides `version`. |
+| `target` | Yes | Where to inject the source (relative to plugin root) |
+| `src_path` | No | Path inside the lib repo to copy from. Auto-detected if omitted. |
+
+### How it works
+
+1. `pockgin build` automatically detects `pockgin.libs.yml`
+2. Resolves versions to exact tags or commits
+3. Writes `pockgin.libs.lock.yml` (commit this file!)
+4. Clones and injects lib source into your `src/` before building the `.phar`
+
+### Version resolution rules
+
+- If the lib repo has tags matching semver, the best match is selected.
+- If no matching tag exists, the default branch HEAD commit is used.
+- **Branch names (`main`, `master`) are never used in production builds.** Only tags or commit SHAs.
+- `build-meta.json` records exactly which lib versions were injected.
+
+### Manual commands (optional)
+
+```bash
+pockgin libs resolve .    # Resolve versions -> write lock file
+pockgin libs vendor .     # Clone and inject libs from lock file
+```
+
+> **Tip:** You don't need to run these manually. `pockgin build` handles everything automatically.
+
 ## Step 2: Submit a Registry Entry
 
 1. Fork the [pockgin/pockgin](https://github.com/pockgin/pockgin) repository
